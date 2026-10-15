@@ -1,0 +1,7 @@
+# Local-only override: host port 8000 is taken by another app on this machine,
+# so the backend is published on 8001 instead. Compose loads this automatically.
+# Frontend must use VITE_API_BASE_URL=http://localhost:8001/api/v1
+services:
+  web:
+    ports: !override
+      - "8001:8000"
